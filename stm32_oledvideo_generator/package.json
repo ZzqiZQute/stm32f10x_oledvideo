@@ -1,0 +1,39 @@
+{
+  "name": "stm32_oledvideo_generator",
+  "version": "0.0.1",
+  "description": "STM32 Oled Video Generator",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "npm rebuild --runtime=electron --target=5.0.4 --abi=70",
+    "dist": "electron-builder"
+  },
+  "keywords": [
+    "Electron",
+    "STM32"
+  ],
+  "author": "ZzqiZQute",
+  "license": "MIT",
+  "dependencies": {
+    "printj": "^1.2.1",
+    "rimraf": "^2.6.3",
+    "sharp": "^0.22.1"
+  },
+  "devDependencies": {
+    "@types/sharp": "^0.22.2",
+    "electron": "^5.0.4",
+    "electron-builder": "^20.44.4"
+  },
+  "build":{
+    "files":[
+      "**/*",
+      "!**/util"
+    ],
+    "extraResources": [
+      {
+        "from": "util",
+        "to": "util"
+      }
+    ]
+  }
+}
